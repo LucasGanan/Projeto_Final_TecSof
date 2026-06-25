@@ -15,16 +15,20 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "pages", "index.html"));
 });
 
-app.get("/sobre", (req, res) => {
-    res.sendFile(path.join(__dirname, "pages", "sobre.html"));
+app.get("/historia", (req, res) => {
+    res.sendFile(path.join(__dirname, "pages", "historia.html"));
 });
 
 app.get("/produtos", (req, res) => {
     res.sendFile(path.join(__dirname, "pages", "produtos.html"));
 });
 
-app.get("/contato", (req, res) => {
-    res.sendFile(path.join(__dirname, "pages", "contato.html"));
+app.get("/time", (req, res) => {
+    res.sendFile(path.join(__dirname, "pages", "time.html"));
+});
+
+app.get("/idolos", (req, res) => {
+    res.sendFile(path.join(__dirname, "pages", "idolos.html"));
 });
 
 app.listen(PORT, () => {

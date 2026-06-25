@@ -1,0 +1,70 @@
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let indice = 0;
+
+function mostrarSlide(n){
+
+    slides.forEach(slide =>
+        slide.classList.remove("ativo")
+    );
+
+    dots.forEach(dot =>
+        dot.classList.remove("ativo")
+    );
+
+    slides[n].classList.add("ativo");
+    dots[n].classList.add("ativo");
+
+    indice = n;
+}
+
+setInterval(() => {
+
+    indice++;
+
+    if(indice >= slides.length){
+        indice = 0;
+    }
+
+    mostrarSlide(indice);
+
+}, 7000);
+
+dots.forEach(dot => {
+
+    dot.addEventListener("click", () => {
+
+        const slide = Number(
+            dot.dataset.slide
+        );
+
+        mostrarSlide(slide);
+
+    });
+
+});
+
+const sliderNoticias = document.querySelector(".slider-noticias");
+
+const btnAnterior = document.querySelector("#anterior");
+const btnProximo = document.querySelector("#proximo");
+
+let posicao = 0;
+
+btnProximo.addEventListener("click", () => {
+    posicao -= 375;
+
+    sliderNoticias.style.transform =
+        `translateX(${posicao}px)`;
+});
+
+btnAnterior.addEventListener("click", () => {
+
+    if(posicao < 0){
+        posicao += 375;
+    }
+
+    sliderNoticias.style.transform =
+        `translateX(${posicao}px)`;
+});

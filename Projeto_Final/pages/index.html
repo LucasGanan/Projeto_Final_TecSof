@@ -3,37 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa</title>
+    <title>CBF</title>
 
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            Empresa
+
+        <div class="header-container">
+
+            <div class="logo-container">
+                <img src="/images/logo.webp" alt="Logo CBF">
+
+                <div class="titulo">
+                    <h1>Confederação Brasileira de Futebol</h1>
+                    <p>Seleção Brasileira</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="/">Home</a>
+                <a href="/historia">História</a>
+                <a href="/produtos">Produtos</a>
+                <a href="/time">Time</a>
+                <a href="/idolos">Ídolos</a>
+            </nav>
+
         </div>
 
-        <nav>
-            <a href="/">Home</a>
-            <a href="/sobre">Sobre Nós</a>
-            <a href="/produtos">Produtos</a>
-            <a href="/contato">Contato</a>
-        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Bem-vindo ao nosso site!</h1>
+    <section class="carrossel">
+
+        <div class="slides">
+
+            <img src="/images/slide1.jpg" class="slide ativo">
+            <img src="/images/slide2.jpg" class="slide">
+            <img src="/images/elenco.webp" class="slide">
+
+        </div>
+
+        <div class="overlay-carrossel"></div>
+
+        <div class="indicadores">
+            <span class="dot ativo" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+
+    </section>
+
+    <section class="noticias">
+
+        <div class="cabecalho-noticias">
+            <h2>Últimas Notícias</h2>
+
+            <div class="botoes-carrossel">
+                <button id="anterior">&#10094;</button>
+                <button id="proximo">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="container-noticias">
+
+            <div class="slider-noticias">
+
+                <div class="card-noticia">
+
+                    <img src="/images/noticia1.webp">
+
+                    <div class="conteudo-noticia">
+                        <h3>Seleção garante vaga no mata-mata</h3>
+
+                        <p>
+                            Brasil vence e avança para a próxima fase da competição.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-noticia">
+
+                    <img src="/images/noticia2.webp">
+
+                    <div class="conteudo-noticia">
+                        <h3>Treino aberto reúne milhares de torcedores</h3>
+
+                        <p>
+                            Evento aproxima ainda mais a Seleção dos fãs.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-noticia">
+
+                    <img src="/images/noticia3.webp">
+
+                    <div class="conteudo-noticia">
+                        <h3>Novo uniforme é apresentado</h3>
+
+                        <p>
+                            Design homenageia a história do futebol brasileiro.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-noticia">
+
+                    <img src="/images/noticia4.jpeg">
+
+                    <div class="conteudo-noticia">
+                        <h3>Ídolos participam de evento especial</h3>
+
+                        <p>
+                            Ex-jogadores celebram a trajetória da Seleção.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="apresentacao">
+
+        <div class="apresentacao-imagem">
+            <img src="/images/pele.jpg" alt="Pelé">
+        </div>
+
+        <div class="apresentacao-texto">
+
+            <h2>A Paixão de Uma Nação</h2>
+
             <p>
-                ...
+                A Seleção Brasileira é muito mais do que uma equipe de futebol.
+                Ela representa a história, a cultura e a paixão de milhões de
+                brasileiros que encontram no esporte um motivo de orgulho nacional.
             </p>
-        </section>
-    </main>
+
+            <p>
+                Com cinco títulos mundiais e uma trajetória repleta de conquistas,
+                o Brasil se tornou referência no futebol e inspiração para gerações
+                ao redor do mundo.
+            </p>
+
+            <a href="/historia" class="btn-historia">
+                Conheça Nossa História
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="produtos-home">
+
+        <div class="banner-produtos">
+            <img src="/images/banner.jpg" alt="Banner Loja Oficial">
+        </div>
+
+        <div class="titulo-produtos">
+
+            <h2>Loja Oficial</h2>
+
+            <p>
+                Vista as cores da Seleção Brasileira e demonstre sua paixão pelo futebol.
+            </p>
+
+        </div>
+
+        <div class="grid-produtos">
+
+            <div class="card-produto">
+
+                <img src="/images/camisa1.avif" alt="Camisa Brasil 2026">
+
+                <div class="info-produto">
+                    <h3>Camisa Brasil 2026 Azul</h3>
+                    <span>R$ 399,99</span>
+                </div>
+
+            </div>
+
+            <div class="card-produto">
+
+                <img src="/images/camisa2.avif" alt="Camisa Retrô">
+
+                <div class="info-produto">
+                    <h3>Camisa Brasil 2026 Amarela</h3>
+                    <span>R$ 299,99</span>
+                </div>
+
+            </div>
+
+            <div class="card-produto">
+
+                <img src="/images/camisa3.avif" alt="Camisa Treino">
+
+                <div class="info-produto">
+                    <h3>Camisa de Treino</h3>
+                    <span>R$ 199,99</span>
+                </div>
+
+            </div>
+
+            <div class="card-produto">
+
+                <img src="/images/camisa4.avif" alt="Camisa Feminina">
+
+                <div class="info-produto">
+                    <h3>Camisa Masculina</h3>
+                    <span>R$ 349,99</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <a href="/produtos" class="btn-produtos">
+            Ver Todos os Produtos
+        </a>
+
+    </section>
+
+    <section class="elenco-home">
+
+        <div class="overlay-elenco">
+
+            <h2>Conheça o Elenco</h2>
+
+            <p>
+                Os atletas que carregam a camisa mais vitoriosa da história do futebol mundial.
+                Conheça os jogadores convocados e a comissão técnica da Seleção Brasileira.
+            </p>
+
+            <a href="/time" class="btn-elenco">
+                Ver Elenco Completo
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="numeros">
+
+        <div class="titulo-secao">
+            <h2>Brasil em Números</h2>
+            <p>
+                Uma história construída por conquistas, tradição e paixão.
+            </p>
+        </div>
+
+        <div class="cards-numeros">
+
+            <div class="card-numero">
+                <img src="/images/copa.webp" alt="Taça da Copa">
+                <h3>5</h3>
+                <p>Copas do Mundo</p>
+            </div>
+
+            <div class="card-numero">
+                <img src="/images/torcida.jpg" alt="Torcida Brasileira">
+                <h3>200M+</h3>
+                <p>Brasileiros apaixonados</p>
+            </div>
+
+            <div class="card-numero">
+                <img src="/images/maraca.webp" alt="História">
+                <h3>1914</h3>
+                <p>Fundação da entidade</p>
+            </div>
+
+            <div class="card-numero">
+                <img src="/images/pele3.jpg" alt="Pelé">
+                <h3>100+</h3>
+                <p>Grandes ídolos</p>
+            </div>
+
+        </div>
+
+    </section>
 
     <footer>
-        <p>© 2026 Nome da Empresa - Todos os direitos reservados.</p>
+
+        <div class="footer-container">
+
+            <div class="footer-logo">
+
+                <img src="/images/logo.webp" alt="Logo CBF">
+
+                <h3>Confederação Brasileira de Futebol</h3>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="/">Home</a>
+                <a href="/historia">História</a>
+                <a href="/produtos">Produtos</a>
+                <a href="/time">Time</a>
+                <a href="/idolos">Ídolos</a>
+
+            </div>
+
+            <div class="footer-info">
+
+                <p>📍 Rio de Janeiro - Brasil</p>
+
+                <p>
+                    © 2026 Confederação Brasileira de Futebol
+                </p>
+
+            </div>
+
+        </div>
+
     </footer>
 
+    <script src="/js/script.js"></script>
 </body>
 </html>
