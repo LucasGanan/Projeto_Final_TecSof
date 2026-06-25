@@ -672,9 +672,9 @@ footer::before{
 }
 
 .banner-produtos{
-    width: calc(100% + 30%);
-    margin-left: -15%;
-    margin-right: -15%;
+    width: calc(100% + 19%);
+    margin-left: -9.5%;
+    margin-right: -9.5%;
     margin-bottom: 50px;
     margin-bottom: 50px;
     overflow: hidden;
