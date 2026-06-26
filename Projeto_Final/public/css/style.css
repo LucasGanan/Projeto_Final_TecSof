@@ -671,3 +671,21 @@ footer::before {
     cursor: pointer;
     width: 100%;
 }
+
+.body-historia {
+    background-color: #ffffff;
+}
+
+.saber-primeiro {
+    color: #002776;
+    margin-left: 40px;
+    margin-bottom: 25px;
+    margin-top: 28px;
+}
+.historia-escolha {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
