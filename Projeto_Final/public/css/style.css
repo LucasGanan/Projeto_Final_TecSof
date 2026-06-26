@@ -595,14 +595,15 @@ footer::before{
     font-size: 1.1rem;
 }
 
-.grid-produtos{
-    display: flex;
-
-    justify-content: center;
-
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
-
     margin-bottom: 50px;
+    
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-produto{
