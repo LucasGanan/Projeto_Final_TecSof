@@ -4,157 +4,122 @@
     box-sizing: border-box;
 }
 
-/* GERAL */
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
-
     background-color: #f4f4f4;
 }
 
-header{
+header {
     background-color: #002776;
-
     border-bottom: 4px solid #FFDF00;
-
     padding: 18px 60px;
 }
 
-.header-container{
+.header-container {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
 
-.logo-container{
+.logo-container {
     display: flex;
-
     align-items: center;
-
     gap: 18px;
 }
 
-.logo-container img{
+.logo-container img {
     width: 75px;
 }
 
-.titulo h1{
+.titulo h1 {
     color: white;
-
     font-size: 1.7rem;
 }
 
-.titulo p{
+.titulo p {
     color: #FFDF00;
-
     margin-top: 4px;
 }
 
-/* MENU */
-
-nav{
+nav {
     display: flex;
     justify-content: center;
     gap: 50px;
-
     padding: 15px;
 }
 
-nav a{
+nav a {
     color: white;
-
     text-decoration: none;
-
     font-size: 1.1rem;
     font-weight: bold;
-
     transition: 0.3s;
 }
 
-nav a:hover{
+nav a:hover {
     color: #FFDF00;
 }
 
-/* CARROSSEL */
-
-.carrossel{
+.carrossel {
     width: 100%;
     height: 80vh;
     position: relative;
     overflow: hidden;
 }
 
-.slide{
+.slide {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     position: absolute;
-
     z-index: 1;
-
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
 
-.slide.ativo{
+.slide.ativo {
     opacity: 1;
-
     animation: zoomSlide 7s linear;
 }
 
-@keyframes zoomSlide{
-
-    from{
-        transform: scale(1);
-    }
-
-    to{
-        transform: scale(1.08);
-    }
-
+@keyframes zoomSlide {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
 }
 
-/* INDICADORES */
-
-.indicadores{
+.indicadores {
     position: absolute;
-
     bottom: 30px;
     left: 50%;
-
     transform: translateX(-50%);
-
     display: flex;
     gap: 12px;
-
     z-index: 3;
 }
 
-.dot{
+.dot {
     width: 40px;
     height: 4px;
-
-    background-color: rgba(255,255,255,.5);
-
+    background-color: rgba(255, 255, 255, .5);
     border-radius: 10px;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
-.dot.ativo{
+.dot.ativo {
     background-color: #FFDF00;
 }
 
-/* MAIN */
+.overlay-carrossel {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(90,18,18,0.3), rgba(0,0,0,0));
+    z-index: 2;
+    pointer-events: none;
+}
 
 main {
     flex: 1;
@@ -174,539 +139,357 @@ main {
     font-size: 1.2rem;
 }
 
-/* FOOTER */
-
-footer{
+footer {
     background-image: url("/images/favela.jpg");
-
     background-size: cover;
     background-position: center;
-
     position: relative;
-
     padding: 70px 8%;
 }
 
-footer::before{
+footer::before {
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     background-color: rgba(0, 39, 118, 0.664);
-
     z-index: 1;
 }
 
-.footer-container{
+.footer-container {
     position: relative;
-
     z-index: 2;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
-
     text-align: center;
 }
 
-.footer-logo img{
+.footer-logo img {
     width: 80px;
-
     margin-bottom: 15px;
 }
 
-.footer-logo h3{
+.footer-logo h3 {
     color: white;
-
     margin-bottom: 25px;
 }
 
-.footer-links{
+.footer-links {
     display: flex;
-
     gap: 30px;
-
     margin-bottom: 25px;
-
     flex-wrap: wrap;
 }
 
-.footer-links a{
+.footer-links a {
     color: white;
-
     text-decoration: none;
-
     transition: .3s;
 }
 
-.footer-links a:hover{
+.footer-links a:hover {
     color: #FFDF00;
 }
 
-.footer-info p{
+.footer-info p {
     color: #dcdcdc;
-
     margin: 5px 0;
 }
 
-/* APRESENTAÇÃO */
-
-.apresentacao{
+.apresentacao {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 60px;
-
     padding: 100px 10%;
-
-    background-color: #ccb100;
-    background: linear-gradient(
-        200deg,
-        #009739,
-        #ccb100,
-        #002776
-    );
+    background: linear-gradient(200deg, #009739, #ccb100, #002776);
 }
 
-.apresentacao-imagem{
+.apresentacao-imagem {
     flex: 1;
 }
 
-.apresentacao-imagem img{
+.apresentacao-imagem img {
     width: 100%;
     max-width: 450px;
-
     border-radius: 15px;
-
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
-.apresentacao-texto{
+.apresentacao-texto {
     flex: 1;
 }
 
-.apresentacao-texto h2{
+.apresentacao-texto h2 {
     color: #000000;
-
     font-size: 3rem;
-
     margin-bottom: 25px;
 }
 
-.apresentacao-texto p{
+.apresentacao-texto p {
     font-size: 1.1rem;
-
     line-height: 1.8;
-
     color: #000000;
-
     margin-bottom: 20px;
 }
 
-.btn-historia{
+.btn-historia {
     display: inline-block;
-
     margin-top: 15px;
-
     background-color: #006125;
     color: white;
-
     text-decoration: none;
-
     padding: 15px 30px;
-
     border-radius: 8px;
-
     font-weight: bold;
-
     transition: .3s;
 }
 
-.btn-historia:hover{
+.btn-historia:hover {
     background-color: #00752c;
-
     transform: translateY(-3px);
 }
 
-/* BRASIL EM NÚMEROS */
-
-.numeros{
+.numeros {
     background-color: #f7f7f7;
     padding: 100px 8%;
 }
 
-.titulo-secao{
+.titulo-secao {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.titulo-secao h2{
+.titulo-secao h2 {
     color: #000000;
     font-size: 3rem;
     margin-bottom: 10px;
 }
 
-.titulo-secao p{
+.titulo-secao p {
     color: #00349b;
     font-size: 1.1rem;
 }
 
-.cards-numeros{
+.cards-numeros {
     display: flex;
     justify-content: center;
     gap: 25px;
 }
 
-.card-numero{
+.card-numero {
     width: 260px;
-
     background-color: white;
-
     border-radius: 15px;
-
     overflow: hidden;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
     transition: .3s;
 }
 
-.card-numero:hover{
+.card-numero:hover {
     transform: translateY(-8px);
 }
 
-.card-numero img{
+.card-numero img {
     width: 100%;
     height: 180px;
-
     object-fit: cover;
 }
 
-.card-numero h3{
+.card-numero h3 {
     color: #009739;
-
     text-align: center;
-
     font-size: 3rem;
-
     margin-top: 20px;
 }
 
-.card-numero p{
+.card-numero p {
     text-align: center;
-
     padding: 20px;
-
     color: #333;
 }
 
-/* NOTÍCIAS */
-
-.noticias{
+.noticias {
     padding: 100px 8%;
     background-color: #f7f7f7;
 }
 
-.cabecalho-noticias{
+.cabecalho-noticias {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 40px;
 }
 
-.cabecalho-noticias h2{
+.cabecalho-noticias h2 {
     color: #002776;
     font-size: 2.8rem;
 }
 
-.botoes-carrossel{
+.botoes-carrossel {
     display: flex;
     gap: 10px;
 }
 
-.botoes-carrossel button{
+.botoes-carrossel button {
     width: 45px;
     height: 45px;
-
     border: none;
-
     border-radius: 50%;
-
     cursor: pointer;
-
     font-size: 1.2rem;
-
     background-color: #002776;
     color: white;
-
     transition: .3s;
 }
 
-.botoes-carrossel button:hover{
+.botoes-carrossel button:hover {
     background-color: #FFDF00;
     color: #002776;
 }
 
-.container-noticias{
+.container-noticias {
     overflow: hidden;
 }
 
-.slider-noticias{
+.slider-noticias {
     display: flex;
     gap: 25px;
-
     transition: transform .5s ease;
 }
 
-.card-noticia{
+.card-noticia {
     min-width: 350px;
-
     background-color: white;
-
     border-radius: 15px;
-
     overflow: hidden;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
 }
 
-.card-noticia img{
+.card-noticia img {
     width: 100%;
     height: 220px;
-
     object-fit: cover;
 }
 
-.conteudo-noticia{
+.conteudo-noticia {
     padding: 20px;
 }
 
-.conteudo-noticia h3{
+.conteudo-noticia h3 {
     margin-bottom: 10px;
     color: #002776;
 }
 
-.conteudo-noticia p{
+.conteudo-noticia p {
     color: #666;
     line-height: 1.5;
 }
 
-/* ELENCO HOME */
-
-.elenco-home{
+.elenco-home {
     height: 70vh;
-
     background-image: url("/images/elenco.webp");
     background-size: cover;
     background-position: center;
-
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.overlay-elenco{
+.overlay-elenco {
     background-color: rgba(0, 39, 107, 0.75);
-
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
     padding: 0 20px;
 }
 
-.overlay-elenco h2{
+.overlay-elenco h2 {
     color: white;
-
     font-size: 3.5rem;
-
     margin-bottom: 20px;
 }
 
-.overlay-elenco p{
+.overlay-elenco p {
     color: white;
-
     max-width: 700px;
-
     font-size: 1.2rem;
-
     line-height: 1.8;
-
     margin-bottom: 35px;
 }
 
-.btn-elenco{
+.btn-elenco {
     background-color: #FFDF00;
-
     color: #002776;
-
     text-decoration: none;
-
     font-weight: bold;
-
     padding: 15px 35px;
-
     border-radius: 8px;
-
     transition: .3s;
 }
 
-.btn-elenco:hover{
+.btn-elenco:hover {
     transform: translateY(-3px);
-
     background-color: white;
 }
 
-/* PRODUTOS */
-
-.produtos-home{
+.produtos-home {
     padding: 100px 8%;
-
     background-color: white;
-
     text-align: center;
 }
 
-.titulo-produtos h2{
+.titulo-produtos h2 {
     font-size: 3rem;
-
     color: #002776;
-
     margin-bottom: 15px;
 }
 
-.titulo-produtos p{
+.titulo-produtos p {
     color: #666;
-
     margin-bottom: 60px;
-
     font-size: 1.1rem;
 }
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-bottom: 50px;
-    
+    margin: 0 auto 50px;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.card-produto{
+.card-produto {
     width: 280px;
-
     background-color: white;
-
     border-radius: 15px;
-
     overflow: hidden;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
     transition: .3s;
 }
 
-.card-produto:hover{
+.card-produto:hover {
     transform: translateY(-8px);
 }
 
-.card-produto img{
+.card-produto img {
     width: 100%;
-
     height: 300px;
-
     object-fit: cover;
 }
 
-.info-produto{
-    padding: 20px;
-}
-
-.info-produto h3{
-    color: #002776;
-
-    margin-bottom: 10px;
-}
-
-.info-produto span{
-    color: #009739;
-
-    font-size: 1.2rem;
-
-    font-weight: bold;
-}
-
-.btn-produtos{
-    display: inline-block;
-
-    background-color: #009739;
-
-    color: white;
-
-    text-decoration: none;
-
-    padding: 15px 35px;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-
-    transition: .3s;
-}
-
-.btn-produtos:hover{
-    background-color: #002776;
-}
-
-.banner-produtos{
-    width: calc(100% + 19%);
-    margin-left: -9.5%;
-    margin-right: -9.5%;
-    margin-bottom: 50px;
-    margin-bottom: 50px;
-    overflow: hidden;
-    margin-top: -100px;
-}
-
-.banner-produtos img{
-    width: 100%;
-    height: auto;
-
-    display: block;
-}
-
-.overlay-carrossel{
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.7),
-        rgba(90, 18, 18, 0.3),
-        rgba(0,0,0,0)
-    );
-
-    z-index: 2;
-
-    pointer-events: none;
-}
 .card-produto.promocao {
     position: relative;
     border: 2px solid #ff0000;
+}
+
+.card-produto.promocao .info-produto span {
+    color: #ff0000;
 }
 
 .selo-promocao {
@@ -722,9 +505,25 @@ footer::before{
     z-index: 10;
 }
 
-.card-produto.promocao .info-produto span {
-    color: #ff0000;
+.info-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
 }
+
+.info-produto h3 {
+    color: #002776;
+    margin-bottom: 10px;
+}
+
+.info-produto span {
+    color: #009739;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .precos {
     display: flex;
     flex-direction: column;
@@ -737,116 +536,7 @@ footer::before{
     font-size: 0.9rem;
     text-decoration: line-through;
 }
-/* Container do Preço + Botão */
-.compra-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    padding: 0 10px;
-}
 
-.btn-carrinho {
-    background-color: #009739;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-carrinho:hover {
-    background-color: #002776;
-    transform: scale(1.1);
-}
-
-
-.popup {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-}
-
-.conteudo-popup {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    width: 90%;
-    max-width: 400px;
-}
-
-.fechar-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #333;
-}
-
-.btn-finalizar {
-    background-color: #009739;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-}
-
-.info-produto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.info-produto .compra-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 15px;
-}
-
-.btn-carrinho {
-    background-color: #009739;
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.btn-carrinho img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.btn-carrinho:hover {
-    background-color: #002776;
-    transform: scale(1.1);
-}
 .compra-container {
     display: flex;
     justify-content: space-between;
@@ -877,37 +567,107 @@ footer::before{
     justify-content: center;
 }
 
-.btn-tamanho:hover {
+.btn-tamanho:hover,
+.btn-tamanho.selecionado {
     background-color: #002776;
     color: white;
     border-color: #002776;
 }
 
 .btn-carrinho {
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    background-color: #009739;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
-.tamanhos-container .btn-tamanho.selecionado {
-    background-color: #002776 !important;
-    color: #ffffff !important;
-    border-color: #002776 !important;
+.btn-carrinho img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
-div.popup, 
-#popup-carrinho, 
+
+.btn-carrinho:hover {
+    background-color: #002776;
+    transform: scale(1.1);
+}
+
+.btn-produtos {
+    display: inline-block;
+    background-color: #009739;
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-produtos:hover {
+    background-color: #002776;
+}
+
+.banner-produtos {
+    width: calc(100% + 19%);
+    margin: -100px -9.5% 50px;
+    overflow: hidden;
+}
+
+.banner-produtos img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .popup {
-    position: fixed !important;
-    z-index: 999999 !important;
-    left: 0;
-    top: 0;
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    inset: 0;
     width: 100vw;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
 }
 
 .conteudo-popup {
-    z-index: 1000000 !important;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000000;
 }
 
-#popup-carrinho[style*="display: flex"] ~ .grid-produtos .selo-promocao,
-#popup-carrinho[style*="display: flex"] ~ main .selo-promocao {
-    z-index: 1 !important;
+.fechar-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.btn-finalizar {
+    background-color: #009739;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
 }
