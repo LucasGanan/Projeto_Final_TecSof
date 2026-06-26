@@ -737,3 +737,180 @@ footer::before{
     font-size: 0.9rem;
     text-decoration: line-through;
 }
+/* Container do Preço + Botão */
+.compra-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.btn-carrinho {
+    background-color: #009739;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-carrinho:hover {
+    background-color: #002776;
+    transform: scale(1.1);
+}
+
+
+.popup {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo-popup {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px;
+}
+
+.fechar-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.btn-finalizar {
+    background-color: #009739;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.info-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-produto .compra-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.btn-carrinho {
+    background-color: #009739;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.btn-carrinho img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.btn-carrinho:hover {
+    background-color: #002776;
+    transform: scale(1.1);
+}
+.compra-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.tamanhos-container {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-tamanho {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-tamanho:hover {
+    background-color: #002776;
+    color: white;
+    border-color: #002776;
+}
+
+.btn-carrinho {
+    flex-shrink: 0; 
+}
+
+.tamanhos-container .btn-tamanho.selecionado {
+    background-color: #002776 !important;
+    color: #ffffff !important;
+    border-color: #002776 !important;
+}
+/* Eleva o container principal do popup acima de qualquer card ou selo */
+div.popup, 
+#popup-carrinho, 
+.popup {
+    position: fixed !important;
+    z-index: 999999 !important;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Garante que o conteúdo de dentro do popup também fique no topo */
+.conteudo-popup {
+    z-index: 1000000 !important;
+}
+
+/* Opcional: Se o selo de promoção continuar insistindo, isso joga ele para trás quando o popup abrir */
+#popup-carrinho[style*="display: flex"] ~ .grid-produtos .selo-promocao,
+#popup-carrinho[style*="display: flex"] ~ main .selo-promocao {
+    z-index: 1 !important;
+}
