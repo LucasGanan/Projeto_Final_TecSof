@@ -892,7 +892,6 @@ footer::before{
     color: #ffffff !important;
     border-color: #002776 !important;
 }
-/* Eleva o container principal do popup acima de qualquer card ou selo */
 div.popup, 
 #popup-carrinho, 
 .popup {
@@ -904,12 +903,10 @@ div.popup,
     height: 100vh;
 }
 
-/* Garante que o conteúdo de dentro do popup também fique no topo */
 .conteudo-popup {
     z-index: 1000000 !important;
 }
 
-/* Opcional: Se o selo de promoção continuar insistindo, isso joga ele para trás quando o popup abrir */
 #popup-carrinho[style*="display: flex"] ~ .grid-produtos .selo-promocao,
 #popup-carrinho[style*="display: flex"] ~ main .selo-promocao {
     z-index: 1 !important;
