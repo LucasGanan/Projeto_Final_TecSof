@@ -703,12 +703,32 @@ footer::before {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 }
 
-#qm-somos {
+.qm-somos {
     color: #002776;
     margin: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     font-size: 46px;
     margin-left: 25px;
+}
+
+#link-qm-somos {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 50px;
+    display: inline-block;
+    position: relative; 
+    padding-bottom: 15px;
+}
+
+#link-qm-somos::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 5px;
+    background-color: #f1c40f;
+    border-radius: 2px;
 }
 
 .div1-qm-somos {
@@ -719,12 +739,379 @@ footer::before {
     margin-bottom: 30px;
     margin-left: 20px;
     margin-right: 20px;
+    align-items: flex-start;
+    padding: 40px 20px;
 }
 
-#qmm {
+.cards {
     width: 350px;
-    background-color: #709ad1;
+    background-color: #e1eaf3;
     border-radius: 20px;
     padding: 20px;
     font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 300px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cards h2 {
+    color: #0038b3;
+    font-size: 22px;;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 56, 179, 0.15);
+    border-color: #0038b3;
+}
+
+.card-text1 {
+    display: -webkit-box; 
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    color: #4a4a4a;
+}
+
+.card-text2 {
+    color: #4a4a4a;
+}
+
+.cards.expanded .card-text1 {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+
+.read-more-btn-cards {
+    background: none;
+    border: none;
+    color: #0038b3;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 0;
+    font-size: 16px;
+    align-self: flex-start;
+    margin-top: auto;
+    transition: color 0.2 ease;
+}
+
+.read-more-btn-cards:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+.historia-ondcmc {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    background: linear-gradient(135deg, #05225c 0%, #0044cc 50%, #001133 100%);
+    padding: 50px;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+.imgpeb {
+    width: 480px;
+    height: 620px;
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+.h1-ondtdcmc {
+    color: #000000;
+    margin-bottom: 25px;
+    font-size: 50px;
+    margin-left: 0px;
+    display: inline-block;
+    position: relative; 
+    padding-bottom: 15px;
+}
+
+.h1-ondtdcmc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 5px;
+    background-color: #f1c40f;
+    border-radius: 2px;
+}
+
+.h2-ondtdcmc {
+    font-size: 30px;
+    color: #000000;
+
+}
+
+.p-ondtdcmc {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+/* Força a linha do tempo a ocupar a largura toda abaixo do seu grid de 2 colunas */
+.timeline-horizontal-container {
+  grid-column: 1 / -1; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 60px;
+  padding: 60px 0;
+  width: 100%;
+}
+
+/* A linha centralizada dourada */
+.timeline-line-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  min-width: 2100px;
+  height: 4px;
+  background: #ffcc00; /* Amarelo CBF */
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+/* Estrutura vertical de cada nó da linha */
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  z-index: 2;
+}
+
+/* Configuração dos cards de texto */
+.timeline-content-card {
+  width: 180px;
+  text-align: center;
+  
+}
+
+.timeline-year {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffcc00;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.timeline-text {
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* As fotos circulares idênticas ao seu exemplo */
+.timeline-circle-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #ffcc00; /* Borda amarela idêntica à referência */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  background-color: #001b4e;
+  margin: 15px 0;
+  transition: transform 0.3s ease;
+}
+
+.timeline-circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Efeito Hover interativo ao passar o mouse */
+.timeline-node:hover .timeline-circle-img {
+  transform: scale(1.15);
+  border-color: #ffffff; /* A borda brilha em branco no hover */
+}
+
+/* Controlando o espaçamento dos nós de CIMA */
+.node-up .timeline-content-card {
+  margin-bottom: 10px;
+}
+
+/* Controlando o espaçamento dos nós de BAIXO */
+.node-down .timeline-content-card {
+  margin-top: 10px;
+}
+
+.timeline-horizontal-container {
+  grid-column: 1 / -1; 
+  display: flex;
+  justify-content: flex-start; /* Alinha os itens a partir do começo */
+  align-items: center;
+  position: relative;
+  margin-top: 15px; /* Reduzido de 60px para colar mais nas informações de cima */
+  padding: 40px 0;
+  width: 100%;
+  
+  /* Esconde a barra de rolagem horizontal feia */
+  overflow-x: hidden; 
+  scroll-behavior: smooth; /* Faz o movimento das setas ser suave */
+}
+
+/* CONTAINER ENVOLVENDO A LINHA DO TEMPO (Para posicionar as setas de forma absoluta) */
+/* DICA: No seu HTML, coloque as setas e o container anterior dentro de uma div com essa classe */
+.timeline-wrapper-relativo {
+  position: relative;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* BOTÕES DE SETINHA (Lado Esquerdo e Direito) */
+.timeline-btn-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: #ffcc00; /* Amarelo CBF */
+  border: none;
+  border-radius: 50%;
+  color: #001133; /* Azul escuro do fundo */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10; /* Fica acima de tudo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-btn-seta:hover {
+  transform: translateY(-50%) scale(1.1);
+  background-color: #ffffff; /* Brilha em branco no mouse */
+}
+
+.btn-esquerda {
+  left: 10px;
+}
+
+.btn-direita {
+  right: 10px;
+}
+
+/* AJUSTE DOS MARCOS: Adicione uma largura mínima fixa para eles manterem o distanciamento */
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 220px; /* Garante que os anos fiquem bem espalhados na horizontal */
+  z-index: 2;
+}
+
+/* Container principal do topo das conquistas */
+.hero-conquistas {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ocupa 60% da altura da tela (ajuste se quiser mais alto) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+/* Tratamento da imagem de fundo e do efeito escurecido */
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cria o efeito de fade/sombra nas bordas e escurece a foto para o texto destacar */
+.hero-bg-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 17, 51, 0.4) 0%, rgba(0, 11, 35, 0.85) 100%);
+    z-index: 2;
+}
+
+/* Caixa de texto flutuando por cima da imagem */
+.hero-content {
+    position: relative;
+    z-index: 3; /* Fica por cima do overlay escuro */
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+/* Configuração do título principal idêntico ao exemplo */
+.hero-titulo {
+    font-size: 56px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.destaque-amarelo {
+    color: #ffcc00; /* Amarelo ouro característico */
+}
+
+/* Subtítulo informativo */
+.hero-subtitulo {
+    font-size: 18px;
+    color: #e2e8f0;
+    margin: 0 0 20px 0;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Divisor com a estrelinha dourada do final */
+.decoracao-divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.linha-decorativa {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffcc00, transparent);
+}
+
+.estrela-decorativa {
+    color: #ffcc00;
+    font-size: 16px;
 }

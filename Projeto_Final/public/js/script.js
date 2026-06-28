@@ -107,3 +107,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.read-more-btn-cards').forEach(button => {
+    button.addEventListener('click', function() {
+      // Encontra o card pai mais próximo que tem a classe .cards
+      const card = this.closest('.cards');
+      
+      if (card) {
+        // Alterna a classe 'expanded' no card
+        card.classList.toggle('expanded');
+        
+        // Altera o texto do botão para o usuário saber que pode fechar
+        if (card.classList.contains('expanded')) {
+          this.textContent = 'Ler menos';
+        } else {
+          this.textContent = 'Ler mais';
+        }
+      }
+    });
+  });
+});
+
+
+// --- CONTROLE DE NAVEGAÇÃO DA LINHA DO TEMPO HORIZONTAL ---
+document.addEventListener("DOMContentLoaded", function() {
+  const container = document.getElementById("timeline-scroll-area");
+  const btnEsq = document.getElementById("seta-esq");
+  const btnDir = document.getElementById("seta-dir");
+
+  // Verifica se os elementos realmente existem na página atual antes de aplicar
+  if (container && btnEsq && btnDir) {
+    
+    // Define quantos pixels ele vai andar a cada clique (ajuste se quiser mais rápido ou devagar)
+    const distanciaClique = 300; 
+
+    btnDir.addEventListener("click", () => {
+      container.scrollLeft += distanciaClique;
+    });
+
+    btnEsq.addEventListener("click", () => {
+      container.scrollLeft -= distanciaClique;
+    });
+  }
+});
