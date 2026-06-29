@@ -152,3 +152,79 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+// Base de dados com as informações de cada conquista
+const dadosCopas = {
+    "1958": {
+        titulo: "Copa do Mundo 1958",
+        sede: "Suécia",
+        placar: "Brasil 5 x 2 Suécia",
+        destaques: "Pelé estreando com apenas 17 anos, a genialidade de Garrincha e Vavá que comandou as redes na grande final.",
+        foto: "/images/historia-copa1958.jpg"
+    },
+    "1962": {
+        titulo: "Copa do Mundo 1962",
+        sede: "Chile",
+        placar: "Brasil 3 x 1 Checoslováquia",
+        destaques: "Garrincha assumiu a liderança após a lesão de Pelé, acompanhado por Amarildo 'O Possesso' e o gênio Amaral.",
+        foto: "/images/historia-copa1962.jpg"
+    },
+    "1970": {
+        titulo: "Copa do Mundo 1970",
+        sede: "México",
+        placar: "Brasil 4 x 1 Itália",
+        destaques: "O ápice do futebol arte. Esquadrão lendário com Pelé, Tostão, Jairzinho (o Furacão da Copa), Rivellino e Carlos Alberto Torres.",
+        foto: "/images/historia-copa1970.jpg"
+    },
+    "1994": {
+        titulo: "Copa do Mundo 1994",
+        sede: "Estados Unidos",
+        placar: "Brasil 0 (3) x (2) 0 Itália (Pênaltis)",
+        destaques: "O fim do jejum de 24 anos sustentado pela dupla histórica Romário e Bebeto, além da liderança imponente do capitão Dunga.",
+        foto: "/images/historia-copa1994.jpg"
+    },
+    "2002": {
+        titulo: "Copa do Mundo 2002",
+        sede: "Coreia do Sul e Japão",
+        placar: "Brasil 2 x 0 Alemanha",
+        destaques: "A redenção perfeita do Fenômeno Ronaldo marcando dois gols na final, a maestria de Rivaldo e Ronaldinho Gaúcho nos '3Rs'.",
+        foto: "/images/historia-copa2002.jpg"
+    }
+};
+
+// Captura os elementos do DOM
+const itensTaca = document.querySelectorAll('.taca-item');
+const elPainel = document.getElementById('painel-copa');
+const elFoto = document.getElementById('copa-foto');
+const elTitulo = document.getElementById('copa-titulo');
+const elSede = document.getElementById('copa-sede');
+const elPlacar = document.getElementById('copa-placar');
+const elDestaques = document.getElementById('copa-destaques');
+
+// Adiciona o evento para cada taça
+itensTaca.forEach(taca => {
+    taca.addEventListener('mouseenter', () => {
+        // 1. Remove classe ativa dos outros
+        itensTaca.forEach(item => item.classList.remove('active'));
+        // 2. Adiciona classe ativa na taça atual
+        taca.classList.add('active');
+
+        // 3. Pega o ano correspondente no atributo data-ano
+        const ano = taca.getAttribute('data-ano');
+        const infos = dadosCopas[ano];
+
+        // 4. Aplica um efeito suave de piscar ao trocar de dados
+        elPainel.style.opacity = 0.4;
+        
+        setTimeout(() => {
+            elFoto.src = infos.foto;
+            elFoto.alt = infos.titulo;
+            elTitulo.innerText = infos.titulo;
+            elSede.innerText = infos.sede;
+            elPlacar.innerText = infos.placar;
+            elDestaques.innerText = infos.destaques;
+            
+            elPainel.style.opacity = 1;
+        }, 150);
+    });
+});

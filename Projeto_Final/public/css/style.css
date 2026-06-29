@@ -1115,3 +1115,116 @@ footer::before {
     color: #ffcc00;
     font-size: 16px;
 }
+
+
+/* Container da Seção Geral */
+.galeria-titulos-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: rgba(3, 18, 49, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 204, 0, 0.2);
+    font-family: sans-serif;
+}
+
+.galeria-main-title {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.galeria-subtitle {
+    color: #a0aec0;
+    margin-bottom: 30px;
+}
+
+/* Navegação das Taças */
+.tacas-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.taca-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    filter: opacity(0.5); /* Fica semi-transparente por padrão */
+}
+
+/* Efeito ao passar o mouse ou quando selecionado */
+.taca-item:hover, .taca-item.active {
+    filter: opacity(1);
+    transform: scale(1.15);
+}
+
+.taca-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.taca-ano {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Painel de Exibição de Conteúdo */
+.painel-detalhes-copa {
+    display: flex;
+    gap: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 8px;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.detalhes-lado-esquerdo {
+    flex: 1;
+    max-width: 400px;
+}
+
+.detalhes-lado-esquerdo img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.detalhes-lado-direito {
+    flex: 1.5;
+    text-align: left;
+}
+
+#copa-titulo {
+    font-size: 26px;
+    color: #ffcc00;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.lista-infos-copa {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-infos-copa li {
+    font-size: 16px;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.lista-infos-copa strong {
+    color: #ffffff;
+}
