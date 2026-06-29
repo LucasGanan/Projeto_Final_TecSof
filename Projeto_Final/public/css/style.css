@@ -1116,13 +1116,21 @@ footer::before {
     font-size: 16px;
 }
 
+.historia-fundobranco {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url('/images/historia-estadio.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease-in-out, background-image 0.5s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
 
 /* Container da Seção Geral */
 .galeria-titulos-container {
     max-width: 1000px;
     margin: 60px auto;
+    margin-top: 10;
     padding: 30px;
-    background-color: rgba(3, 18, 49, 0.4);
+    background-color: rgba(9, 46, 88, 0.856);
     border-radius: 12px;
     border: 1px solid rgba(255, 204, 0, 0.2);
     font-family: sans-serif;
@@ -1130,12 +1138,12 @@ footer::before {
 
 .galeria-main-title {
     font-size: 32px;
-    color: #ffffff;
+    color: #f1ecec;
     margin-bottom: 5px;
 }
 
 .galeria-subtitle {
-    color: #a0aec0;
+    color: #aebfd8;
     margin-bottom: 30px;
 }
 
@@ -1228,6 +1236,98 @@ footer::before {
 .lista-infos-copa strong {
     color: #ffffff;
 }
+
+/* Estado inicial oculto da galeria (invisível e um pouco abaixo) */
+.galeria-titulos-container {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Classe que o JavaScript vai injetar quando o usuário scrollar até a seção */
+.galeria-titulos-container.scroll-animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Permite que as 9 taças fiquem bem distribuídas e quebrem linha se a tela for pequena */
+.nav-america {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Garante que a animação de scroll funcione também no painel da Copa América */
+.galeria-america {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.galeria-america.scroll-animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Distribuição das taças do painel feminino */
+.nav-feminina {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Garante o efeito de surgimento no scroll para a galeria feminina */
+.galeria-feminina {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.galeria-feminina.scroll-animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#legado {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 50px;
+    display: inline-block;
+    position: relative; 
+    padding-bottom: 15px;
+}
+
+#legado::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 5px;
+    background-color: #f1c40f;
+    border-radius: 2px;
+}
+
+.historia-ultimop {
+    margin: 12px;
+    margin-left: 16px;
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 60;
+    color: #e0e0e0;
+}
+
+/* Esconde a tag de imagem completamente se o link estiver vazio */
+.painel-detalhes-copa img[src=""], 
+.painel-detalhes-copa img:not([src]) {
+    display: none;
+}
+
+/* Garante que ela volte a aparecer normalmente quando o JS injetar a foto */
+.painel-detalhes-copa img {
+    display: block;
+}
+
 
 .grid-idolos {
     display: grid;
