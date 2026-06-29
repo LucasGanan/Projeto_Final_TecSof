@@ -1228,3 +1228,46 @@ footer::before {
 .lista-infos-copa strong {
     color: #ffffff;
 }
+
+.grid-idolos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.card-idolo {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+    border: 1px solid #e0e0e0;
+    transition: .3s;
+}
+
+.card-idolo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 39, 118, 0.15);
+}
+
+.card-idolo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-idolo h3 {
+    color: #002776;
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+}
+
+.card-idolo p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
