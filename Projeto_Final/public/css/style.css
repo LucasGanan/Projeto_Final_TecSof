@@ -1368,8 +1368,6 @@ footer::before {
     color: #555;
     line-height: 1.5;
 }
-
-body { font-family: "Segoe UI", sans-serif; background-color: #f9f9f9; padding: 20px; }
 .container { max-width: 750px; margin: auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
 h1 { text-align: center; color: #1a237e; }
 
