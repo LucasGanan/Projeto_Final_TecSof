@@ -32,20 +32,30 @@ const sliderNoticias = document.querySelector(".slider-noticias");
 const btnAnterior = document.querySelector("#anterior");
 const btnProximo = document.querySelector("#proximo");
 let posicao = 0;
+const larguraCard = 375;
+const maxPosicao = larguraCard;
+btnProximo.addEventListener("click", () => {
 
-if (btnProximo && btnAnterior && sliderNoticias) {
-    btnProximo.addEventListener("click", () => {
-        posicao -= 375;
-        sliderNoticias.style.transform = `translateX(${posicao}px)`;
-    });
+    if(posicao < maxPosicao){
 
-    btnAnterior.addEventListener("click", () => {
-        if (posicao < 0) {
-            posicao += 375;
-        }
-        sliderNoticias.style.transform = `translateX(${posicao}px)`;
-    });
-}
+        posicao += larguraCard;
+
+        sliderNoticias.style.transform =
+            `translateX(-${posicao}px)`;
+    }
+
+});
+btnAnterior.addEventListener("click", () => {
+
+    if(posicao > 0){
+
+        posicao -= larguraCard;
+
+        sliderNoticias.style.transform =
+            `translateX(-${posicao}px)`;
+    }
+
+});
 
 document.addEventListener("click", function(evento) {
     if (evento.target.classList.contains('btn-tamanho') || evento.target.classList.contains('button-tamanho')) {
