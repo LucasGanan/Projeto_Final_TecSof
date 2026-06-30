@@ -25,10 +25,13 @@ header {
     align-items: center;
 }
 
-.logo-container {
+.logo-container{
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
+
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo-container img{
