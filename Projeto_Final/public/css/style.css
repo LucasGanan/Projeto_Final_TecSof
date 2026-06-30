@@ -5,11 +5,12 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
+    
 }
 
 header {
@@ -761,7 +762,7 @@ footer::before {
 
 .cards h2 {
     color: #0038b3;
-    font-size: 22px;;
+    font-size: 22px;
 }
 
 .cards:hover {
@@ -848,23 +849,11 @@ footer::before {
 .h2-ondtdcmc {
     font-size: 30px;
     color: #000000;
-
 }
 
 .p-ondtdcmc {
     margin-top: 8px;
     font-size: 18px;
-}
-
-.timeline-horizontal-container {
-  grid-column: 1 / -1; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin-top: 60px;
-  padding: 60px 0;
-  width: 100%;
 }
 
 .timeline-line-center {
@@ -880,19 +869,9 @@ footer::before {
   transform: translateY(-50%);
 }
 
-.timeline-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  flex: 1;
-  z-index: 2;
-}
-
 .timeline-content-card {
   width: 180px;
   text-align: center;
-  
 }
 
 .timeline-year {
@@ -957,7 +936,6 @@ footer::before {
   margin-top: 15px; 
   padding: 40px 0;
   width: 100%;
-  
   overflow-x: hidden; 
   scroll-behavior: smooth; 
 }
@@ -1007,6 +985,7 @@ footer::before {
   flex-direction: column;
   align-items: center;
   position: relative;
+  flex: 1;
   min-width: 220px; 
   z-index: 2;
 }
@@ -1100,7 +1079,6 @@ footer::before {
     background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url('/images/historia-estadio.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background 0.5s ease-in-out, background-image 0.5s ease-in-out;
     transition: opacity 0.4s ease-in-out;
 }
 
@@ -1113,6 +1091,10 @@ footer::before {
     border-radius: 12px;
     border: 1px solid rgba(255, 204, 0, 0.2);
     font-family: sans-serif;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .galeria-main-title {
@@ -1211,13 +1193,6 @@ footer::before {
 
 .lista-infos-copa strong {
     color: #ffffff;
-}
-
-.galeria-titulos-container {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
-                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .galeria-titulos-container.scroll-animado {
@@ -1325,6 +1300,7 @@ footer::before {
         margin-bottom: 15px !important;
     }
 }
+
 .grid-idolos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1368,9 +1344,19 @@ footer::before {
     line-height: 1.5;
 }
 
-body { font-family: "Segoe UI", sans-serif; background-color: #f9f9f9; padding: 20px; }
-.container { max-width: 750px; margin: auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-h1 { text-align: center; color: #1a237e; }
+.container {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a237e;
+}
 
 .card-tecnico-centralizado {
     background: white;
@@ -1396,121 +1382,6 @@ h1 { text-align: center; color: #1a237e; }
     gap: 35px;
     justify-content: center;
     margin: 50px auto;
-}
-
-.jogador-container {
-    position: relative;
-    display: inline-block;
-}
-
-.jogador {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.jogador:hover {
-    transform: scale(1.25);
-    z-index: 10;
-}
-
-.jogador img {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #1a237e;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.jogador span {
-    background: #ffcc00;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 8px;
-    color: #1a237e;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.info-detalhada {
-    display: none;
-    position: absolute;
-    bottom: 125%; 
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1a237e; 
-    color: #ffffff;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-    width: 230px;
-    z-index: 99;
-    pointer-events: none;
-}
-
-.info-detalhada::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 8px;
-    border-style: solid;
-    border-color: #1a237e transparent transparent transparent;
-}
-
-.jogador-container:hover .info-detalhada {
-    display: block;
-}
-
-.info-detalhada h3 {
-    margin: 0 0 8px 0;
-    font-size: 16px;
-    color: #ffcc00;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-    padding-bottom: 4px;
-}
-
-.info-detalhada p {
-    margin: 5px 0;
-    font-size: 13px;
-    line-height: 1.4;
-}
-.foto-selecao-container {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto 35px auto;
-    text-align: center;
-}
-
-.foto-selecao {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    border: 3px solid #1a237e;
-}
-
-.legenda-foto {
-    font-size: 14px;
-    color: #555;
-    margin-top: 8px;
-    font-style: italic;
-}
-
-.grade-jogadores {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cria exatamente 4 colunas */
-    gap: 35px 20px; /* Espaço de 35px entre linhas e 20px entre colunas */
-    justify-items: center;
-    margin: 40px auto;
-    max-width: 700px;
 }
 
 .jogador-container {
@@ -1595,6 +1466,38 @@ h1 { text-align: center; color: #1a237e; }
     margin: 5px 0;
     font-size: 13px;
     line-height: 1.4;
+}
+
+.foto-selecao-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto 35px auto;
+    text-align: center;
+}
+
+.foto-selecao {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid #1a237e;
+}
+
+.legenda-foto {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.grade-jogadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    gap: 35px 20px;
+    justify-items: center;
+    margin: 40px auto;
+    max-width: 700px;
 }
 
 @media (max-width: 600px) {
