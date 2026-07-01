@@ -31,20 +31,42 @@ if (slides.length > 0) {
 const sliderNoticias = document.querySelector(".slider-noticias");
 const btnAnterior = document.querySelector("#anterior");
 const btnProximo = document.querySelector("#proximo");
+
 let posicao = 0;
 
 if (btnProximo && btnAnterior && sliderNoticias) {
+
+    const cards = document.querySelectorAll(".card-noticia");
+
+    const larguraCard = 375;
+
+    // quantidade máxima que pode andar
+    const limite = (cards.length - 3) * larguraCard;
+
     btnProximo.addEventListener("click", () => {
-        posicao -= 375;
-        sliderNoticias.style.transform = `translateX(${posicao}px)`;
+
+        if (Math.abs(posicao) < limite) {
+
+            posicao -= larguraCard;
+
+            sliderNoticias.style.transform =
+                `translateX(${posicao}px)`;
+        }
+
     });
 
     btnAnterior.addEventListener("click", () => {
+
         if (posicao < 0) {
-            posicao += 375;
+
+            posicao += larguraCard;
+
+            sliderNoticias.style.transform =
+                `translateX(${posicao}px)`;
         }
-        sliderNoticias.style.transform = `translateX(${posicao}px)`;
+
     });
+
 }
 
 document.addEventListener("click", function(evento) {
